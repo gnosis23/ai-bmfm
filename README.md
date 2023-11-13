@@ -21,7 +21,7 @@ API Key 自己提供，请不要滥用，不提供长期服务，请自行部署
   - 思维发散程度：越高 ChatGPT 思维就越发散，开始乱答。根据不同的问题可以调节这个选项，创意性的就可以调高一点。
 
   - 开启连续对话：OpenAI 并没有提供 ChatGPT 那样的上下文功能，只能每次都把全部对话传过去，并且都要算 token，而且仍然有最大 4096 token 的限制。
-  - OpenAI 模型：需要注意的是, 只有获得了 GPT4 API 内测资格的用户才可以使用您的 API KEY 调用 GPT4。不同的模型对应的 token 最大值不同，比如 `gpt-3.5-turbo` 的最大 token 为 4k(4096)，`gpt-4` 的最大 token 为 8k(8192)，`gpt-4-32k`  的最大 token 为 32k(32768)。不同模型的价格也不同，具体可以查看 [OpenAI 价格](https://openai.com/pricing/)。
+  - OpenAI 模型：需要注意的是, 只有获得了 GPT4 API 内测资格的用户才可以使用您的 API KEY 调用 GPT4。不同的模型对应的 token 最大值不同，比如 `gpt-3.5-turbo` 的最大 token 为 4k(4096)，`gpt-4` 的最大 token 为 8k(8192)，`gpt-4-1106-preview`  的最大 token 为 32k(32768)。不同模型的价格也不同，具体可以查看 [OpenAI 价格](https://openai.com/pricing/)。
 - token 是怎么算的：OpenAI 有它自己的算法，大多数时候是一个单词 1 token，一个汉字 2 token。
 - Open AI Key 要怎么获得：注册 OpenAI 的帐号，然后 [生成 Key](https://platform.openai.com/account/api-keys) 就行了。现在注册就送 5 美元，可以用一两个月。嫌注册麻烦，可以直接去买号，
 - 输入框右边的四个按钮：
@@ -75,7 +75,7 @@ API Key 自己提供，请不要滥用，不提供长期服务，请自行部署
 | `RESET_CONTINUOUS_DIALOGUE_OPTION` | 刷新时重置 `开启连续对话` 选项，在分享给很多人用的时候可以有效避免大量消耗。 | false                                                        |
 | `OPENAI_API_BASE_URL`              | 本地开发时可以填写 OpenAI 的代理服务器，但是 Vercel 不需要。 | api.openai.com                                               |
 | `PASSWORD`                         | 网站密码                                                     | 无                                                           |
-| `MAX_INPUT_TOKENS`                 | 输入的 token 最大值，如果开启 `连续对话`，将计算之前的所有对话内容。OpenAI 限制 token 最大值为 4096，但这是输入和输出之和，所以可以将这个值设置为 3072， 留 1024 作为输出。如果不想被滥用，可以将这个值设置的再小一点。 | {<br/>  "gpt-3.5-turbo": 3072,<br/>  "gpt-4": 6144,<br/>  "gpt-4-32k": 24576<br/>} |
+| `MAX_INPUT_TOKENS`                 | 输入的 token 最大值，如果开启 `连续对话`，将计算之前的所有对话内容。OpenAI 限制 token 最大值为 4096，但这是输入和输出之和，所以可以将这个值设置为 3072， 留 1024 作为输出。如果不想被滥用，可以将这个值设置的再小一点。 | {<br/>  "gpt-3.5-turbo": 3072,<br/>  "gpt-4": 6144,<br/>  "gpt-4-1106-preview": 96000<br/>} |
 | `SENDKEY`                          | 使用 [Server 酱](https://sct.ftqq.com/sendkey) 推送帐号余额以及可用状态到微信，如果需要自行获取。推送时间为早上 8 点和晚上 8 点，在 vercel.json 文件中修改。如果 key 太多，超过 20 个，有可能失败。 | 无                                                           |
 | `SENDCHANNEL`                      | [Server 酱](https://sct.ftqq.com/sendkey) 的推送通道，默认微信服务号。 | 9                                                            |
 
